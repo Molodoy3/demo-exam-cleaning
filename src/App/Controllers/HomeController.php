@@ -8,4 +8,9 @@ class HomeController extends BaseController
     {
         $this->view('home.php', 'Главная');
     }
+
+    public function notFound(): void
+    {
+        $this->view('notFound.php', 'Страница не найдена');
+    }
 }

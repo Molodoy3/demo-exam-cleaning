@@ -16,5 +16,9 @@ match ($uri) {
     '/login' => (new UserController())->login(),
     '/logout' => (new UserController())->logout(),
 
+    '/services' => (new ServiceController())->services(),
     '/service/create' => (new ServiceController())->create(),
+    '/service/manager' => (new ServiceController())->manager(),
+    '/service/edit-status' => (new ServiceController())->editStatus(),
+    default => (new HomeController())->notFound(),
 };

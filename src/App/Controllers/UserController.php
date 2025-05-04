@@ -73,6 +73,7 @@ class UserController extends BaseController
 
                     if ($stmt->rowCount() > 0) {
                         $_SESSION['login'] = $registerDTO->login;
+                        $_SESSION['is_admin'] = false;
                         header('Location: /');
                         exit();
                     } else {
@@ -114,6 +115,7 @@ class UserController extends BaseController
                 $res = $stmt->fetch();
                 if ($res && password_verify($loginDTO->password, $res['password'])) {
                     $_SESSION['login'] = $loginDTO->login;
+                    $_SESSION['is_admin'] = (bool)$res['is_admin'];
                     header('Location: /');
                 } else {
                     $errors['common'][] = 'Данные введены не верно';

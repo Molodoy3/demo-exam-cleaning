@@ -10,6 +10,9 @@
                     <li><a href="/login">Войти</a></li>
                 <?php } else { ?>
                     <li><a href="/services">Мои заявки</a></li>
+                    <?php if ($_SESSION['is_admin']) { ?>
+                        <li><a href="/service/manager">Управление заявками</a></li>
+                    <?php } ?>
                     <li><a href="/service/create">Создать заявку</a></li>
                     <li><a href="/logout">Выйти</a></li>
                 <?php } ?>
