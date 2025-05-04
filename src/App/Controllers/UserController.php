@@ -5,7 +5,6 @@ namespace App\Controllers;
 use App\DTO\User\LoginDTO;
 use App\DTO\User\RegisterDTO;
 use mysql_xdevapi\Exception;
-use PDO;
 
 class UserController extends BaseController
 {

@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\HomeController;
+use App\Controllers\ServiceController;
 use App\Controllers\UserController;
 
 session_start();
@@ -14,4 +15,6 @@ match ($uri) {
     '/register' => (new UserController())->register(),
     '/login' => (new UserController())->login(),
     '/logout' => (new UserController())->logout(),
+
+    '/service/create' => (new ServiceController())->create(),
 };
